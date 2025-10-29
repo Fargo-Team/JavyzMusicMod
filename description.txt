@@ -51,6 +51,17 @@ The following themes are replaced:
 -Temple (Castle Vein)
 -Underworld (Altars of Apostasy)
 
+VERSION 1.6.1
+Music changes and additions:
+-Queen Bee: Hive Knight -> Smart Race
+-Skeletron: Widow
+-Lifelight: Spitfire/Kababies -> Trial by Fury
+-Betsy: Darkeater Midir -> ASGORE
+
+Added Now Playing notifications - toggleable
+Fixed Night not being covered by Scarlet Forest
+Fixed Space Night not being covered by Quiet and Falling
+
 VERSION 1.6
 -Added new music:
 --SPAWN (Deltarune chapter 4, Lunatic Cultist)
