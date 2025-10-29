@@ -51,7 +51,7 @@ namespace FargoAltMusicMod
                 return null;
             return FindClosestBoss(Souls.Find<ModNPC>(name).Type);
         }
-        
+
         public static bool ZoneShallow(this Player player) => player.ZoneDirtLayerHeight || player.ZoneOverworldHeight;
 
         public static bool ZoneUnderground(this Player player) => player.ZoneDirtLayerHeight || player.ZoneRockLayerHeight;
@@ -72,7 +72,7 @@ namespace FargoAltMusicMod
             int stardust = NPC.CountNPCS(NPCID.LunarTowerStardust);
             return solar + vortex + nebula + stardust;
         }
-        
+
     }
 
     public class VanillaMusic : ModSystem
@@ -666,7 +666,7 @@ namespace FargoAltMusicMod
                                 break;
                             case 1:
                                 ugMusicHolder = 31;
-                               // musicFade[4] = 0f;
+                                // musicFade[4] = 0f;
                                 break;
                         }
                     }
@@ -882,6 +882,7 @@ namespace FargoAltMusicMod
             int pillars = MusicUtils.CountPillars();
             if (pillars > 2)
             {
+                NowPlayingSystem.nowPlayingString = MusicConfig.Instance.LunarPillars;
                 return true;
             }
             return false;
@@ -902,6 +903,7 @@ namespace FargoAltMusicMod
             int pillars = MusicUtils.CountPillars();
             if (pillars > 0 && pillars <= 2)
             {
+                NowPlayingSystem.nowPlayingString = MusicConfig.Instance.LunarPillars;
                 return true;
             }
             return false;
@@ -917,6 +919,7 @@ namespace FargoAltMusicMod
             NPC npc = MusicUtils.FindClosestSoulsBoss("LifeChallenger");
             if (npc != null && npc.active && npc.life < npc.lifeMax / 2)
             {
+                NowPlayingSystem.nowPlayingString = "Father";
                 return true;
             }
             return false;
@@ -933,6 +936,7 @@ namespace FargoAltMusicMod
             NPC npc = MusicUtils.FindClosestSoulsBoss("LifeChallenger");
             if (npc != null && npc.active && npc.life >= npc.lifeMax / 2)
             {
+                NowPlayingSystem.nowPlayingString = "Spitfire";
                 return true;
             }
             return false;
@@ -948,6 +952,7 @@ namespace FargoAltMusicMod
             NPC npc = MusicUtils.FindClosestBoss(NPCID.CultistBoss);
             if (npc != null)
             {
+                NowPlayingSystem.nowPlayingString = "SPAWN";
                 return true;
             }
             return false;
@@ -968,6 +973,12 @@ namespace FargoAltMusicMod
             NPC npc = MusicUtils.FindClosestBoss(NPCID.MoonLordCore);
             if (npc != null)
             {
+                NowPlayingSystem.nowPlayingString = MusicConfig.Instance.MoonLord switch
+                {
+                    "Bigger Guitar" => "You're Gonna Need A Bigger Ukulele",
+                    "GUARDIAN" => "GUARDIAN",
+                    _ => "",
+                };
                 return true;
             }
             return false;
@@ -983,6 +994,7 @@ namespace FargoAltMusicMod
             NPC npc = MusicUtils.FindClosestBoss(NPCID.DD2Betsy);
             if (npc != null)
             {
+                NowPlayingSystem.nowPlayingString = "Darkeater Midir";
                 return true;
             }
             return false;
@@ -998,6 +1010,7 @@ namespace FargoAltMusicMod
             NPC npc = MusicUtils.FindClosestBoss(NPCID.Golem);
             if (npc != null)
             {
+                NowPlayingSystem.nowPlayingString = "Castle Vein 2";
                 return true;
             }
             return false;
@@ -1014,6 +1027,7 @@ namespace FargoAltMusicMod
             NPC npc = MusicUtils.FindClosestSoulsBoss("CosmosChampion");
             if (npc != null)
             {
+                NowPlayingSystem.nowPlayingString = "Tenebre Rosso Sangue";
                 return true;
             }
             return false;
@@ -1035,6 +1049,7 @@ namespace FargoAltMusicMod
             NPC npc = MusicUtils.FindClosestSoulsBoss("AbomBoss");
             if (npc != null)
             {
+                NowPlayingSystem.nowPlayingString = MusicConfig.Instance.Abom;
                 return true;
             }
             return false;
@@ -1050,6 +1065,7 @@ namespace FargoAltMusicMod
             NPC npc = MusicUtils.FindClosestSoulsBoss("MutantBoss");
             if (npc != null)
             {
+                NowPlayingSystem.nowPlayingString = MusicName;
                 return true;
             }
             return false;
@@ -1065,6 +1081,7 @@ namespace FargoAltMusicMod
             NPC npc = MusicUtils.FindClosestSoulsBoss("DeviBoss");
             if (npc != null)
             {
+                NowPlayingSystem.nowPlayingString = "Resurrections";
                 return true;
             }
             return false;
@@ -1080,6 +1097,7 @@ namespace FargoAltMusicMod
             NPC npc = MusicUtils.FindClosestBoss(NPCID.BrainofCthulhu);
             if (npc != null)
             {
+                NowPlayingSystem.nowPlayingString = MusicName;
                 return true;
             }
             return false;
@@ -1095,6 +1113,7 @@ namespace FargoAltMusicMod
             NPC npc = MusicUtils.FindClosestBoss(NPCID.EaterofWorldsHead);
             if (npc != null)
             {
+                NowPlayingSystem.nowPlayingString = MusicName;
                 return true;
             }
             return false;
@@ -1110,6 +1129,7 @@ namespace FargoAltMusicMod
             NPC npc = MusicUtils.FindClosestBoss(NPCID.QueenBee);
             if (npc != null)
             {
+                NowPlayingSystem.nowPlayingString = "idk what the actual song name is lol";
                 return true;
             }
             return false;
@@ -1125,6 +1145,7 @@ namespace FargoAltMusicMod
             NPC npc = MusicUtils.FindClosestBoss(NPCID.WallofFlesh);
             if (npc != null)
             {
+                NowPlayingSystem.nowPlayingString = "Your Best Nightmare";
                 return true;
             }
             return false;
@@ -1140,6 +1161,7 @@ namespace FargoAltMusicMod
             NPC npc = MusicUtils.FindClosestBoss(NPCID.KingSlime);
             if (npc != null)
             {
+                NowPlayingSystem.nowPlayingString = MusicName;
                 return true;
             }
             return false;
@@ -1155,6 +1177,7 @@ namespace FargoAltMusicMod
             NPC npc = MusicUtils.FindClosestBoss(NPCID.EyeofCthulhu);
             if (npc != null)
             {
+                NowPlayingSystem.nowPlayingString = "Chaos King";
                 return true;
             }
             return false;
@@ -1185,6 +1208,7 @@ namespace FargoAltMusicMod
             NPC npc = MusicUtils.FindClosestBoss(NPCID.HallowBoss);
             if (npc != null)
             {
+                NowPlayingSystem.nowPlayingString = MusicConfig.Instance.EmpressOfLight;
                 return true;
             }
             return false;
@@ -1233,6 +1257,7 @@ namespace FargoAltMusicMod
             bool anyMech = Main.npc.Any(n => n != null && n.active && MechIDs.Contains(n.type));
             if (anyMech)
             {
+                NowPlayingSystem.nowPlayingString = MusicConfig.Instance.MechBosses;
                 return true;
             }
             return false;
@@ -1254,6 +1279,7 @@ namespace FargoAltMusicMod
             NPC npc = MusicUtils.FindClosestBoss(NPCID.Plantera);
             if (npc != null && npc.life > npc.lifeMax / 2)
             {
+                NowPlayingSystem.nowPlayingString = MusicConfig.Instance.Plantera;
                 return true;
             }
             return false;
@@ -1280,6 +1306,7 @@ namespace FargoAltMusicMod
             NPC npc = MusicUtils.FindClosestBoss(NPCID.Plantera);
             if (npc != null && npc.life <= npc.lifeMax / 2)
             {
+                NowPlayingSystem.nowPlayingString = MusicConfig.Instance.Plantera;
                 return true;
             }
             return false;
@@ -1298,6 +1325,7 @@ namespace FargoAltMusicMod
             NPC npc = MusicUtils.FindClosestSoulsBoss("BanishedBaron");
             if (npc != null && npc.life >= npc.lifeMax * 0.66)
             {
+                NowPlayingSystem.nowPlayingString = "Death Odyssey Aftermath";
                 return true;
             }
             return false;
@@ -1317,6 +1345,7 @@ namespace FargoAltMusicMod
             NPC npc = index >= 0 && index < Main.maxNPCs ? Main.npc[index] : null;
             if (npc != null && npc.life < npc.lifeMax * 0.66)
             {
+                NowPlayingSystem.nowPlayingString = "Death Odyssey";
                 return true;
             }
             return false;
@@ -1332,6 +1361,7 @@ namespace FargoAltMusicMod
             NPC npc = MusicUtils.FindClosestBoss(NPCID.DukeFishron);
             if (npc != null && npc.active)
             {
+                NowPlayingSystem.nowPlayingString = "Deep Blue (Combat)";
                 return true;
             }
             return false;

@@ -14,6 +14,10 @@ namespace FargoAltMusicMod
         public override ConfigScope Mode => ConfigScope.ClientSide;
         public static MusicConfig Instance => ModContent.GetInstance<MusicConfig>();
 
+        [DefaultValue(NowPlayingID.Notification)]
+        [DrawTicks]
+        public NowPlayingID NowPlayingEnum;
+
         [Header("Bosses")]
 
         [DefaultValue(true)]
