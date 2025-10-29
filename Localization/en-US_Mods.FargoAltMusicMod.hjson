@@ -19,6 +19,11 @@ Configs: {
 			Tooltip: ""
 		}
 
+		Skeletron: {
+			Label: Skeletron
+			Tooltip: ""
+		}
+
 		MoonLord: {
 			Label: Moon Lord
 			Tooltip: ""
@@ -253,5 +258,17 @@ Configs: {
 			Label: Lunatic Cultist
 			Tooltip: ""
 		}
+
+		NowPlayingEnum: {
+			Label: Now Playing Enum
+			Tooltip: ""
+		}
+	}
+
+	NowPlayingID: {
+		Tooltip: ""
+		None.Label: None
+		Chat.Label: Chat
+		Notification.Label: Notification
 	}
 }

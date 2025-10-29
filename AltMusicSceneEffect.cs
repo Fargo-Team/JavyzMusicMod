@@ -909,34 +909,20 @@ namespace FargoAltMusicMod
             return false;
         }
     }
-    class LifelightP2 : MusicEffect
-    {
-        public override bool Config => MusicConfig.Instance.Lieflight;
-        public override string MusicName => "Father";
-        public override SceneEffectPriority Priority => SceneEffectPriority.BossHigh;
-        public override bool Active(Player player)
-        {
-            NPC npc = MusicUtils.FindClosestSoulsBoss("LifeChallenger");
-            if (npc != null && npc.active && npc.life < npc.lifeMax / 2)
-            {
-                NowPlayingSystem.nowPlayingString = "Father";
-                return true;
-            }
-            return false;
-        }
-
-    }
-    class LifelightP1 : MusicEffect
+    class Lifelight : MusicEffect
     {
         public override SceneEffectPriority Priority => SceneEffectPriority.BossHigh;
-        public override string MusicName => "Heir";
+        public override string MusicName => "TrialByFury";
         public override bool Config => MusicConfig.Instance.Lieflight;
         public override bool Active(Player player)
         {
-            NPC npc = MusicUtils.FindClosestSoulsBoss("LifeChallenger");
+            string name = "LifeChallenger";
+            if (MusicUtils.Souls != null && MusicUtils.Souls.Version >= Version.Parse("1.8"))
+                name = "Lifelight";
+            NPC npc = MusicUtils.FindClosestSoulsBoss(name);
             if (npc != null && npc.active && npc.life >= npc.lifeMax / 2)
             {
-                NowPlayingSystem.nowPlayingString = "Spitfire";
+                NowPlayingSystem.nowPlayingString = "Trial by Fury";
                 return true;
             }
             return false;
@@ -987,14 +973,30 @@ namespace FargoAltMusicMod
     class DarkeaterBetsy : MusicEffect
     {
         public override SceneEffectPriority Priority => SceneEffectPriority.BossLow;
-        public override string MusicName => "Midir";
+        public override string MusicName => "ASGORE";
         public override bool Config => MusicConfig.Instance.Betsy;
         public override bool Active(Player player)
         {
             NPC npc = MusicUtils.FindClosestBoss(NPCID.DD2Betsy);
             if (npc != null)
             {
-                NowPlayingSystem.nowPlayingString = "Darkeater Midir";
+                NowPlayingSystem.nowPlayingString = "ASGORE";
+                return true;
+            }
+            return false;
+        }
+    }
+    class Skeletron : MusicEffect
+    {
+        public override SceneEffectPriority Priority => SceneEffectPriority.BossLow;
+        public override string MusicName => "Widow";
+        public override bool Config => MusicConfig.Instance.Skeletron;
+        public override bool Active(Player player)
+        {
+            NPC npc = MusicUtils.FindClosestBoss(NPCID.SkeletronHead);
+            if (npc != null)
+            {
+                NowPlayingSystem.nowPlayingString = "Widow";
                 return true;
             }
             return false;
@@ -1122,14 +1124,14 @@ namespace FargoAltMusicMod
     class Bee22Knight : MusicEffect
     {
         public override SceneEffectPriority Priority => SceneEffectPriority.BossLow;
-        public override string MusicName => "HiveKnight";
+        public override string MusicName => "SmartRace";
         public override bool Config => MusicConfig.Instance.QueenBee;
         public override bool Active(Player player)
         {
             NPC npc = MusicUtils.FindClosestBoss(NPCID.QueenBee);
             if (npc != null)
             {
-                NowPlayingSystem.nowPlayingString = "idk what the actual song name is lol";
+                NowPlayingSystem.nowPlayingString = "Smart Race";
                 return true;
             }
             return false;

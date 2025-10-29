@@ -35,6 +35,9 @@ namespace FargoAltMusicMod
         [DefaultValue(true)]
         public bool QueenBee;
 
+        [DefaultValue(true)]
+        public bool Skeletron;
+
         [DefaultValue(false)]
         public bool Deviantt;
 

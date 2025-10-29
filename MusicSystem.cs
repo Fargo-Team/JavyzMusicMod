@@ -41,6 +41,7 @@ namespace FargoAltMusicMod
                 case MusicID.OverworldDay:
                 case MusicID.AltOverworldDay:
                 case MusicID.WindyDay:
+                case MusicID.Night:
                     if (config.Forest)
                     {
                         i = GetMusic("ScarletForest");
