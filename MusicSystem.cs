@@ -43,6 +43,7 @@ namespace FargoAltMusicMod
                     break;
 
                 case MusicID.Space:
+                case MusicID.SpaceDay:
                     if (config.Space)
                         i = GetMusic("QuietAndFalling");
                     break;
