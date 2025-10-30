@@ -161,7 +161,7 @@ namespace FargoAltMusicMod
                     if (config.UndergroundHallow)
                     {
                         i = GetMusic("PurpleRain");
-                        NowPlayingSystem.nowPlayingString = "Purple Rain";
+                        NowPlayingSystem.nowPlayingString = "Rain Formerly Known as Purple";
                     }
                     break;
 

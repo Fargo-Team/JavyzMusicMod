@@ -1012,7 +1012,7 @@ namespace FargoAltMusicMod
             NPC npc = MusicUtils.FindClosestBoss(NPCID.Golem);
             if (npc != null)
             {
-                NowPlayingSystem.nowPlayingString = "Castle Vein 2";
+                NowPlayingSystem.nowPlayingString = "Halls of Sacrilegious Remains";
                 return true;
             }
             return false;
