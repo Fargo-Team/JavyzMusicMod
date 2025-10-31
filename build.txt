@@ -1,5 +1,5 @@
 displayName = Javyz' Music Mod 
 author = Javyz
-version = 1.6.1.2
+version = 1.6.1.3
 side = Client
 weakReferences  = FargowiltasSouls@1.7
